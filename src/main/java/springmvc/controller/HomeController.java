@@ -40,6 +40,12 @@ public class HomeController {
 	public ModelAndView help() {
 		System.out.println("this is help controller");
 		LocalDateTime now = LocalDateTime.now();
+
+		List<Integer> list = new ArrayList<Integer>();
+		list.add(25);
+		list.add(55);
+		list.add(272);
+		list.add(9933);
 		
 		//creating ModelAndView Object
 		ModelAndView modelAndView = new ModelAndView();
@@ -48,7 +54,7 @@ public class HomeController {
 		modelAndView.addObject("name","Premshanker Kushwaha");
 		modelAndView.addObject("rollNumber",12345);
 		modelAndView.addObject("time",now);
-		
+		modelAndView.addObject("marks",list);
 		
 		//setting the view name
 		modelAndView.setViewName("help");
