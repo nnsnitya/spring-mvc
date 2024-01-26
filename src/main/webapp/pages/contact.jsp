@@ -14,7 +14,7 @@
   </head>
   <body>
   <div class="container mt-5">
-    <form action="/processform" method="post">
+    <form action="processform" method="post">
     
     	<h3 class="text-center">Registration Form</h3>
     	
