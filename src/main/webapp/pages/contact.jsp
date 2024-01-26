@@ -25,12 +25,12 @@
 		
     	<div class="form-group">
 		    <label for="userName">User Name</label>
-		    <input type="text" class="form-control" id="userName" aria-describedby="userNamehelp" placeholder="Enter here">
+		    <input type="text" class="form-control" id="userName" aria-describedby="userNamehelp" placeholder="Enter here" name="userName">
 		</div>
 		
     	<div class="form-group">
 		    <label for="userPassword">User Password</label>
-		    <input type="password" class="form-control" id="userPassword" aria-describedby="passwordhelp" placeholder="Enter here">
+		    <input type="password" class="form-control" id="userPassword" aria-describedby="passwordhelp" placeholder="Enter here" name="password">
 		</div>
 		
 		<div class="container text-center">
