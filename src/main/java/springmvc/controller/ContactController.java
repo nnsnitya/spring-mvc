@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import springmvc.model.User;
+
 @Controller
 public class ContactController {
 	
@@ -25,9 +27,17 @@ public class ContactController {
 		System.out.println("User Name: "+userName);
 		System.out.println("User Password: "+userPassword);
 		
-		model.addAttribute("email",userEmail);
+		User user = new User();
+		user.setEmail(userEmail);
+		user.setUserName(userName);
+		user.setPassword(userPassword);
+		System.out.println(user);
+		
+		
+		/*model.addAttribute("email",userEmail);
 		model.addAttribute("name", userName);
-		model.addAttribute("password", userPassword);
+		model.addAttribute("password", userPassword);*/
+		model.addAttribute("user",user);
 		return "success";
 	}
 }
