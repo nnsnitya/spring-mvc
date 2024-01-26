@@ -6,26 +6,27 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import springmvc.model.User;
 
 @Controller
 public class ContactController {
 	
+	@ModelAttribute
+	public void commonDataForModel(Model m) {
+		m.addAttribute("Header", "Spring MVC");
+		m.addAttribute("Desc", "This is Spring MVC course");
+		System.out.println("Adding common data to model");
+	}
+	
 	@RequestMapping("/contact")
 	public String showForm(Model m) {
-		m.addAttribute("Header", "Registration/Contact From");
-		m.addAttribute("Desc", "This is Sign Up form to getting Register");
+		System.out.println("creating form....");
 		return "contact";
 	}
 	
 	@RequestMapping(path="/processform", method=RequestMethod.POST)
 	public String handleForm(@ModelAttribute User user, Model model) {
-		
 		System.out.println(user);
-		
-		model.addAttribute("Header", "Registration Success");
-		model.addAttribute("Desc", "This is confirmation that your have been registered with us.");
 		return "success";
 	}
 	
