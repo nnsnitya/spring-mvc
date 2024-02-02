@@ -11,7 +11,8 @@ import org.springframework.web.servlet.view.RedirectView;
 @Controller
 public class ReController {
 	
-	@RequestMapping("/one")
+	//0. HttpServletResponse --not recommended(Legacy type)
+	/*@RequestMapping("/one")
 	public String one(HttpServletResponse response) {
 		System.out.println("This is one handler");
 		try {
@@ -21,14 +22,16 @@ public class ReController {
 			e.printStackTrace();
 		}
 		return "";
-	}
-	/*@RequestMapping("/one")
+	}*/
+	//2. RedirectView
+	@RequestMapping("/one")
 	public RedirectView one() {
 		System.out.println("This is one handler");
 		RedirectView redirectView = new RedirectView();
 		redirectView.setUrl("enjoy");
 		return redirectView;
-	}*/
+	}
+	//1. redirect prefix
 	/*@RequestMapping("/one")
 	public String one() {
 		System.out.println("This is one handler");
