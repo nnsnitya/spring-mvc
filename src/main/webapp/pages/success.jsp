@@ -11,6 +11,7 @@
 
 	<h1>${Header}</h1>
 	<p>${Desc}</p>
+	<h1 style="color: green;">${msg }</h1>
 	<hr>
 	<h1>Welcome, ${user.userName }</h1>
 	<h1>Your email address is ${user.email }</h1>
